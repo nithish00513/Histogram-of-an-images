@@ -1,3 +1,8 @@
+Name:nithish kumar s
+reg no:212224230190
+
+
+
 # Histogram-of-an-images
 ## Aim
 To obtain a histogram for finding the frequency of pixels in an Image with pixel values ranging from 0 to 255. Also write the code using OpenCV to perform histogram equalization.
@@ -25,25 +30,66 @@ The Histogram of gray scale image and color image is shown.
 
 
 ## Program:
+# Developed By: ABISHEIK RAJ J 
+# Register Number: 212224230006
 ```python
-# Developed By: 
-# Register Number: 
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
+image = cv2.imread('a.jpeg')
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
+equalized_image = cv2.equalizeHist(gray_image)
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+plt.figure(figsize=(10, 7))
 
+plt.subplot(2, 2, 1)
+plt.imshow(gray_image, cmap='gray')
+plt.title('Original Grayscale Image')
+plt.axis('off')
 
+plt.subplot(2, 2, 2)
+plt.imshow(equalized_image, cmap='gray')
+plt.title('Equalized Image')
+plt.axis('off')
 
+plt.subplot(2, 2, 3)
+plt.plot(hist_original, color='black')
+plt.title('Original Histogram')
+plt.xlim([0, 256])
 
+plt.subplot(2, 2, 4)
+plt.plot(hist_equalized, color='black')
+plt.title('Equalized Histogram')
+plt.xlim([0, 256])
+
+plt.tight_layout()
+plt.show()
 ```
+  
 ## Output:
 ### Input Grayscale Image and Color Image
+
+<img width="499" height="425" alt="image" src="https://github.com/user-attachments/assets/5ee1f4f0-66f1-48b5-b3a0-22f7878200d7" />
+>
+<img width="521" height="419" alt="image" src="https://github.com/user-attachments/assets/4171c69e-87eb-4dbe-a590-a714fe549a33" />
+
+
 
 
 ### Histogram of Grayscale Image and any channel of Color Image
 
+<img width="620" height="463" alt="image" src="https://github.com/user-attachments/assets/6ca588f0-f4d2-4d45-b685-3225932fb65d" />
+
+
 
 
 ### Histogram Equalization of Grayscale Image.
+
+<img width="647" height="460" alt="image" src="https://github.com/user-attachments/assets/217bef81-7d0f-4fa3-b6aa-4c3759414313" />
+
 
 
 
