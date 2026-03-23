@@ -30,8 +30,8 @@ The Histogram of gray scale image and color image is shown.
 
 
 ## Program:
-# Developed By: ABISHEIK RAJ J 
-# Register Number: 212224230006
+# Developed By: nithish kumar s
+# Register Number: 212224230190
 ```python
 import cv2
 import numpy as np
